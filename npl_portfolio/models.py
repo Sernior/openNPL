@@ -45,6 +45,10 @@ class Portfolio(models.Model):
     """
     name = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(blank=True, null=True, help_text='Description of the portfolio')
+    cut_off_date = models.DateField(
+        null=True, blank=True,
+        help_text='Reference date for the data in this portfolio (EBA NPL ITS cut-off date, field 3.00 context).'
+    )
 
     creation_date = models.DateTimeField(auto_now_add=True)
     last_change_date = models.DateTimeField(auto_now=True)
